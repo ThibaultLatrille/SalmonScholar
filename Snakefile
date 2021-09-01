@@ -17,14 +17,14 @@ rule scrape:
     output:
         name="{id}.csv",
     params:
-        search=lambda w: "--search '{0}' --api_key {1}".format(PUBLIS[w.id], config["SCRAPER_API_KEY"])
+        search=lambda w: '--search "{0}" --api_key {1}'.format(PUBLIS[w.id], config["SCRAPER_API_KEY"])
     shell:
         'python3 {input.script} {params.search} --name {output.name}'
 
 rule intersect:
     input:
         script='intersect.py',
-        cites=expand("{id}.csv", id=list(PUBLIS.keys())[:1])
+        cites=expand("{id}.csv", id=list(PUBLIS.keys()))
     output:
         file="sorted_results.csv",
     shell:
