@@ -6,4 +6,6 @@
 
 *~
 .snakemake/
+__pycache__
+venv
 .idea/
