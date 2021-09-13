@@ -1,2 +1,3 @@
 SCRAPER_API_KEY: 'XXXXX'
-FILE: 'core-biblio.csv'
+INPUT_FILE: 'core-biblio.csv'
+OUTPUT_FILE: 'sorted_results.csv'

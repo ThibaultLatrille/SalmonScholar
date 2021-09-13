@@ -37,7 +37,6 @@ if __name__ == '__main__':
     scholarly.set_timeout(120)
     search_query = scholarly.search_pubs(args.search)
     publi = next(search_query)
-    print(publi)
     cites = scholarly.citedby(publi)
     df = pd.DataFrame([p["bib"] for p in cites])
     df.to_csv(args.name, index=False)

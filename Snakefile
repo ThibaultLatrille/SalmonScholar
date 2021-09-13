@@ -6,10 +6,10 @@ from glob import glob
 configfile: 'config.yaml'
 
 FOLDER = os.path.abspath('.')
-PUBLIS = {row["Key"]: row["Key"] for id, row in list(pd.read_csv(config["FILE"]).iterrows())}
+PUBLIS = {row["Key"]: row["Title"] for id, row in list(pd.read_csv(config["INPUT_FILE"]).iterrows())}
 
 rule all:
-    input: "sorted_results.csv"
+    input: config["OUTPUT_FILE"]
 
 rule scrape:
     input:
@@ -26,6 +26,6 @@ rule intersect:
         script='intersect.py',
         cites=expand("tmp/{id}.csv", id=list(PUBLIS.keys()))
     output:
-        file="sorted_results.csv",
+        file=config["OUTPUT_FILE"]
     shell:
         'python3 {input.script} --input {input.cites} --output {output.file}'
