@@ -1,7 +1,5 @@
-import numpy
 import os
 import pandas as pd
-from glob import glob
 
 configfile: 'config.yaml'
 

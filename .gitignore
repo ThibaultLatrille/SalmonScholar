@@ -8,4 +8,5 @@
 .snakemake/
 __pycache__
 venv
+/tmp
 .idea/
