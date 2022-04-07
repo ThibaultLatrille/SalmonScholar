@@ -24,7 +24,7 @@ cd SalmonScholar
 Install python3 packages
 ```
 sudo apt install -qq -y snakemake python3-pandas python3-pip
-pip3 install scholarly scraperapi-sdk --user
+pip3 install scholarly --user
 ```
 
 ## 2. Setup ScraperAPI

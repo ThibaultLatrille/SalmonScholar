@@ -1,5 +1,5 @@
 import pandas as pd
-from scraper_api import ScraperAPIClient
+from libraries.scraper_api import ScraperAPIClient
 from scholarly import scholarly, ProxyGenerator
 import argparse
 
